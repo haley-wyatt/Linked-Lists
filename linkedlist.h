@@ -1,6 +1,6 @@
 /*
 Name: Wyatt Haley
-Class: CS 302
+Class: Data Structures
 File name: linkedlist.h
 */
 
@@ -16,10 +16,8 @@ class LinkedList{
         Node<ItemType>* headPtr;
         int itemCount;
     public:
-        
         LinkedList();
         LinkedList(int count);
-
         bool isEmpty() const;
         int getLength() const;
         bool insert(int newPosition, const ItemType& newEntry);
@@ -28,10 +26,7 @@ class LinkedList{
         ItemType getEntry(int position) const;
         ItemType replace(int position, const ItemType& newEntry);
         void print();
-        ~LinkedList(){
-            clear();
-        }
+        ~LinkedList(){clear();}
 };
-
 #include "linkedlist.cpp"
 #endif
