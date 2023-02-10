@@ -1,6 +1,6 @@
 /*
 Name: Wyatt Haley
-Class: CS 302
+Class: Data Structures
 File name: linkedlist.cpp
 */
 
