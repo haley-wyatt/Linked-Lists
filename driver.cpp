@@ -1,7 +1,6 @@
 /*
 Name: Wyatt Haley
-Class: CS 302
-Programming Assignment 2
+Class: Data Structures
 File name: driver.cpp
 */
 
@@ -16,12 +15,10 @@ int main(int argc, const char* argv[]){
     int choice = 0;
     std::string newTask;
     
-    // prompt menu for user
     do{
         menuChoice = getMenuChoice();
         switch (menuChoice){
             case 0:
-                //EXIT
                 break;
             case 1: // add a new task to linked list
                 linkedList.print();
@@ -46,7 +43,6 @@ int main(int argc, const char* argv[]){
                 std::cout << "List cleared." << std::endl;
                 break;
             default:
-                //EXIT
                 break;  
         }
     } while (menuChoice != 0);
