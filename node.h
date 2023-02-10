@@ -1,8 +1,6 @@
 /*
 Name: Wyatt Haley
-Class: CS 302 w/ Erin Keith
-Date: 09/27/2022
-Programming Assignment 2
+Class: Data Structures
 File name: node.h
 */
 
@@ -13,9 +11,8 @@ template<class ItemType>
 class Node{
     private:
         ItemType item; 
-        Node<ItemType>* next; // Points to next node
-    public:
-        
+        Node<ItemType>* next;
+    public:   
         Node();
         Node(const ItemType& anItem);
         Node(const ItemType& anItem, Node<ItemType>* nextNodePtr);
