@@ -1,5 +1,5 @@
 #Name: Wyatt Haley
-#Class: CS 302
+#Class: Data Structures
 #File name: makefile
 
 all: executable
