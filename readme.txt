@@ -1,11 +1,11 @@
 Name: Wyatt Haley
-Class: CS 302 - Data Structures
+Class: Data Structures
 File name: readme.txt
 
-This is a project from my data structures class at UNR. The point of the project is to design and implement linked lists by creating a to-do application.
+This is a project from my data structures class at UNR. The point of the project is to design and implement linked lists by creating a simple to-do program.
 
 Instructions to run code:
-    This code is written in c++ and will compile in c++ version 11
+    The makefile is set-up to use the GNU c++ compiler
     In bash terminal run the following commands:
         make
         ./executable
