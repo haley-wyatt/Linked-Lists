@@ -1,6 +1,6 @@
 /*
 Name: Wyatt Haley
-Class: CS 302
+Class: Data Structures
 File name: node.cpp
 */
 
@@ -12,8 +12,7 @@ Node<ItemType>::Node(){
 }
 
 template<class ItemType>
-Node<ItemType>::Node(const ItemType& anItem) : item(anItem), next(nullptr){
-}
+Node<ItemType>::Node(const ItemType& anItem) : item(anItem), next(nullptr){}
 
 template<class ItemType>
 Node<ItemType>::Node(const ItemType& anItem, Node<ItemType>* nextNodePtr) : item(anItem), next(nextNodePtr){}
