@@ -49,23 +49,18 @@ int main(int argc, const char* argv[]){
 
     return 0;
 }
-// getMenuChoice displays the main menu and receives and returns the chosen option
+
 int getMenuChoice(){
-	int choice;
+	int choice -1;
 	do {
-        std::cout << std::endl << "TODO Application" << std::endl;
-        std::cout << "================================" <<std::endl;
-        std::cout.width(8); std::cout << std::left << "1.";
-		std::cout.width(8); std::cout << std::left << "Add a new task" << std::endl;
-		std::cout.width(8); std::cout << std::left << "2.";
-        std::cout.width(8); std::cout << std::left << "Delete a task" << std::endl;
-        std::cout.width(8); std::cout << std::left << "3.";
-        std::cout.width(8); std::cout << std::left << "Show all tasks" << std::endl;
-        std::cout.width(8); std::cout << std::left << "4.";
-        std::cout.width(8); std::cout << std::left << "Remove all tasks" << std::endl;
-        std::cout.width(8); std::cout << std::left << "0.";
-        std::cout.width(8); std::cout << std::left << "EXIT" << std::endl;
+		std::cout << std::endl << "To-do List" << std::endl;
+		std::cout << "================================" << std::endl;
+		std::cout << "1. " << "Add a new task" << std::endl;
+		std::cout << "2. " << "Delete a task" << std::endl;
+		std::cout << "3. " << "Show all tasks" << std::endl;
+		std::cout << "4. " << "Remove all tasks" << std::endl;
+		std::cout << "0. " << "EXIT" << std::endl;
 		std::cin >> choice;
-	}while(choice !=0 && choice !=1 && choice !=2 && choice !=3 && choice !=4);
+	} while(choice < 0 || choice > 4);
 	return choice;
 }
