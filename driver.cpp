@@ -15,9 +15,7 @@ int getMenuChoice();
 int main(int argc, const char* argv[]) {
 
     LinkedList<std::string> linkedList;
-    int menuChoice = 0;
-    int choice = 0;
-    int taskPriority = 1;
+    int menuChoice, taskNumber, taskPriority;
     std::string newTask;
 
     do {
@@ -25,8 +23,6 @@ int main(int argc, const char* argv[]) {
         menuChoice = getMenuChoice();
 
         switch (menuChoice) {
-        case 0:
-            break;
         case 1: // add a new task to linked list
             // determine task priority
             if (linkedList.isEmpty()) {
@@ -40,11 +36,14 @@ int main(int argc, const char* argv[]) {
             std::cout
                 << "What is your new task?" << std::endl
                 << "Enter task: ";
+
             std::getline(std::cin >> std::ws, newTask);
 
             // check for successful insertion into linked list
             if (linkedList.insert(taskPriority, newTask)) {
                 std::cout << "Task '" << newTask << "' successfully inserted." << std::endl;
+            } else {
+                std::cout << "Error: Task not successfully inserted." << std::endl;
             }
 
             break;
@@ -57,22 +56,22 @@ int main(int argc, const char* argv[]) {
 
             std::cout
                 << "Which task are you removing?" << std::endl
-                << "Enter your choice (1-" << listLength << "): ";
+                << "Enter the task number (1-" << listLength << "): ";
 
-            std::cin >> choice;
+            std::cin >> taskNumber;
 
-            while (std::cin.fail() || (choice < 1 || choice > listLength)) {
+            while (std::cin.fail() || (taskNumber < 1 || taskNumber > listLength)) {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
                 std::cout
                     << "Error: Invalid input." << std::endl
-                    << "Enter your choice (1-" << listLength << "): ";
+                    << "Enter the task number (1-" << listLength << "): ";
 
-                std::cin >> choice;
+                std::cin >> taskNumber;
             }
 
-            if (linkedList.remove(choice)) {
+            if (linkedList.remove(taskNumber)) {
                 std::cout << std::endl << "Removed task." << std::endl;
             } else {
                 std::cout << "Error: No task removed.";
@@ -91,6 +90,7 @@ int main(int argc, const char* argv[]) {
             }
 
             break;
+        case 0:
         default:
             break;
         }
