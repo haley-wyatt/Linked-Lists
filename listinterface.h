@@ -7,10 +7,8 @@ File name: listinterface.h
 #ifndef LISTINTERFACE_H
 #define LISTINTERFACE_H
 
-#include <iostream>
-
 template<class ItemType>
-class ListInterface{
+class ListInterface {
     virtual bool isEmpty() const = 0;
     virtual int getLength() const = 0;
     virtual bool insert(int newPosition, const ItemType& newEntry) = 0;
