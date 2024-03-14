@@ -3,7 +3,7 @@
 #File name: makefile
 
 CXX = g++
-CFLAGS = -Wall -Werror
+CFLAGS = -Wall
 SRC = driver.cpp
 OBJ = $(SRC:.cpp=.o)
 DEPS = listinterface.h linkedlist.h node.h
