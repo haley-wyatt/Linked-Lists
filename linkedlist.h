@@ -154,7 +154,7 @@ void LinkedList<ItemType>::print() {
         return;
     }
 
-    std::cout << "Current task list: " << std::endl;
+    std::cout << std::endl << "Current task list: " << std::endl;
 
     Node<ItemType>* curPtr = headPtr;
 
@@ -162,8 +162,6 @@ void LinkedList<ItemType>::print() {
         std::cout << i << ": " << curPtr->getItem() << std::endl;
         curPtr = curPtr->getNext();
     }
-
-    std::cout << std::endl;
 }
 
 #endif //LINKEDLIST_H
