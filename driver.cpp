@@ -6,7 +6,6 @@ File name: driver.cpp
 
 #include <iostream>
 #include <limits>
-
 #include "linkedlist.h"
 
 int getTaskPriority(int listLength);
@@ -23,21 +22,11 @@ int main(int argc, const char* argv[]) {
         menuChoice = getMenuChoice();
 
         switch (menuChoice) {
-            case 1:
-                insertTask(list);
-                break;
-            case 2:
-                removeTask(list);
-                break;
-            case 3:
-                list.print();
-                break;
-            case 4:
-                clearTasks(list);
-                break;
-            case 0:
-            default:
-                break;
+            case 1: insertTask(list); break;
+            case 2: removeTask(list); break;
+            case 3: list.print(); break;
+            case 4: clearTasks(list); break;
+            default: break;
         }
 
     } while (menuChoice != 0);
@@ -48,7 +37,7 @@ int main(int argc, const char* argv[]) {
 void clearTasks(LinkedList<std::string>& list){
     if (!list.isEmpty()) {
         list.clear();
-        std::cout << "List cleared." << std::endl;
+        std::cout << std::endl << "List cleared." << std::endl;
     } else {
         std::cout << std::endl << "There are no tasks in the list." << std::endl;
     }
@@ -67,6 +56,7 @@ void insertTask(LinkedList<std::string>& list){
     }
 
     std::cout
+        << std::endl
         << "What is your new task?" << std::endl
         << "Enter task: ";
 
@@ -75,7 +65,7 @@ void insertTask(LinkedList<std::string>& list){
     if (list.insert(priority, newTask)) {
         std::cout << "Task '" << newTask << "' successfully inserted." << std::endl;
     } else {
-        std::cout << "Error: Task not successfully inserted." << std::endl;
+        std::cerr << "Error: Task not successfully inserted." << std::endl;
     }
 }
 
@@ -98,7 +88,7 @@ void removeTask(LinkedList<std::string>& list){
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-        std::cout
+        std::cerr
             << "Error: Invalid input." << std::endl
             << "Enter the task number (1-" << listLength << "): ";
 
@@ -108,7 +98,7 @@ void removeTask(LinkedList<std::string>& list){
     if (list.remove(taskNumber)) {
         std::cout << std::endl << "Removed task." << std::endl;
     } else {
-        std::cout << "Error: No task removed.";
+        std::cerr << "Error: No task removed.";
     }
 }
 
@@ -116,7 +106,8 @@ int getTaskPriority(int listLength) {
     int taskPriority = -1;
 
     std::cout
-        << "Info: Task priority must be between " << 1 << " and " << listLength + 1 << std::endl
+        << "INFO: Task priority must be between " << 1 << " and " << listLength + 1 << "." << std::endl
+        << std::endl
         << "What is the priority of your new task?" << std::endl
         << "Enter priority: ";
 
@@ -126,7 +117,7 @@ int getTaskPriority(int listLength) {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-        std::cout
+        std::cerr
             << std::endl
             << "Error: Invalid task priority." << std::endl
             << "Enter priority: ";
@@ -158,8 +149,7 @@ int getMenuChoice() {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-        std::cout
-            << std::endl
+        std::cerr
             << "Error: Invalid choice."
             << std::endl
             << "Enter your choice (0-4): ";
@@ -167,7 +157,6 @@ int getMenuChoice() {
         std::cin >> choice;
     }
 
-    std::cout << std::endl;
 
     return choice;
 }
